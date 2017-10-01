@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DeSean Ellis | Image Search Abstraction Layer</title>
+    <meta name="description" content="DeSean Ellis | Image Search Abstraction Layer">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        Image Search Abstraction Layer
+      </h1>
+    </div>
+
+    <section>
+      <div>
+        This microservice returns a list of image metadata using Google's Custom Search API. The list is paged, with 10 items returned on each page. Using an offset key you can transverse the pages. You can also view a list of the top 10 recent search terms.
+        <br />
+        The return format is JSON.
+      </div>
+      <div>
+        <h2>
+          How to Use Image Search
+        </h2>
+        <p>
+            Access the Search API via /api/imagesearch/ and append your search term to the API endpoint.
+        <br />
+        <code>
+          `https://cedar-lamp.glitch.me/api/imagesearch/liverpool`
+        </code>
+          <br /><br />
+          Offset using the "offset" key, when the value is the page number (by default the page number is set to 1, when no key is specified).
+          <br />
+          <code>
+            `https://cedar-lamp.glitch.me/api/imagesearch/liverpool?offset=2`
+          </code>
+        </p>
+        <h2>
+          How to View Recent Search Terms
+        </h2>
+        <p>
+          Access the Recent Search Terms API via /api/latest/imagesearch/
+          <br />
+          <code>
+            `https://cedar-lamp.glitch.me/api/latest/imagesearch/`
+          </code>
+        </p>
+        <p>
+          You will receive a JSON response:
+          <br />
+          <code>
+            { "term": "lolcats funny", "when": "2017-10-01T07:02:17.665Z"}
+          </code>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <a href="https://www.freecodecamp.org/deseanellis" target="_blank">Developed by DeSean Ellis - Free Code Camp</a>
+    </footer>
+
+  </body>
+</html>
